@@ -244,6 +244,8 @@ aside {
     padding-bottom: 60px; }
     .xtr-btm p {
       height: 150px; }
+  .text {
+    font-size: .8em; }
   .content.test {
     max-width: 40%; }
   .flex .better {
