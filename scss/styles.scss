@@ -317,7 +317,8 @@ aside {
 @media (max-width: 430px) {
 
   h2 {
-    font-size: 20px;
+    font-size: 1.3em
+    ;
   }
 
   h6 {
@@ -359,8 +360,12 @@ aside {
   .xtr-btm {
     padding-bottom: 60px;
 
+    h4 {
+      margin-bottom: 10px;
+    }
+
     p {
-      height: 150px
+      height: 170px
     }
   }
 
