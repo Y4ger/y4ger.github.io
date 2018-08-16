@@ -219,14 +219,11 @@ aside {
   h4 {
     margin-bottom: 30px;
   }
-
-  .btn {
-    max-width: 50%;
-    margin: auto;
-  }
 }
 
 .btn {
+  max-width: 50%;
+  margin: auto;
 
   a {
     text-decoration: none;
@@ -292,7 +289,25 @@ aside {
   margin: 0 0 10px 2px;
   height: 0;
   width: 0;
-  text-align: right;
+}
+
+.chart {
+  background-color: $first;
+  margin: 0 0 10px 2px;  
+  border-radius: 2px 7px 7px 2px;
+  height: 90%;
+}
+
+.ball-75 {
+  width: 98%;
+}
+
+.ball-50 {
+  width: 65.2%;
+}
+
+.ball-25 {
+  width: 32.4%;
 }
 
 .show {

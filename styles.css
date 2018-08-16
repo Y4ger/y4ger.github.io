@@ -148,12 +148,12 @@ aside {
     height: 200px; }
   .xtr-btm h4 {
     margin-bottom: 30px; }
-  .xtr-btm .btn {
-    max-width: 50%;
-    margin: auto; }
 
-.btn a {
-  text-decoration: none; }
+.btn {
+  max-width: 50%;
+  margin: auto; }
+  .btn a {
+    text-decoration: none; }
 
 .inset {
   background-color: #fff;
@@ -197,8 +197,22 @@ aside {
   border-radius: 100%;
   margin: 0 0 10px 2px;
   height: 0;
-  width: 0;
-  text-align: right; }
+  width: 0; }
+
+.chart {
+  background-color: #c70a14;
+  margin: 0 0 10px 2px;
+  border-radius: 2px 7px 7px 2px;
+  height: 90%; }
+
+.ball-75 {
+  width: 98%; }
+
+.ball-50 {
+  width: 65.2%; }
+
+.ball-25 {
+  width: 32.4%; }
 
 .show {
   display: block; }
