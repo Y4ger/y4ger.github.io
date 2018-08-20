@@ -92,10 +92,12 @@ header {
   header .info {
     background-color: #fff;
     max-width: 45%; }
+  header h6 {
+    margin-bottom: 25px; }
+  header p {
+    font-size: .9em; }
   header img {
     width: 50%; }
-  header h3, header h5 {
-    margin-bottom: 5px; }
 
 aside {
   min-width: 474px; }
@@ -235,6 +237,8 @@ aside {
     margin: 0; }
   aside {
     min-width: 0; }
+  header h6 {
+    margin-bottom: 10px; }
   .topic {
     flex-wrap: wrap; }
   .container {

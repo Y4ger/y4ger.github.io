@@ -138,12 +138,16 @@ header {
     max-width: 45%;
   }
 
-  img {
-    width: 50%;
+  h6 {
+    margin-bottom: 25px;
   }
 
-  h3, h5, {
-    margin-bottom: 5px;
+  p {
+    font-size: .9em
+  }
+
+  img {
+    width: 50%;
   }
 }
 
@@ -344,6 +348,12 @@ aside {
     min-width: 0;
   }
 
+  header {
+    h6 {
+      margin-bottom: 10px;
+    }
+  }
+
   .topic {
     flex-wrap: wrap;
   }
@@ -389,4 +399,8 @@ aside {
     margin: 0 60px 0  45px;
     }
   }
+}
+
+@media (max-width: 1100px) and (min-width: 450px) {
+  
 }

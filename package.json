@@ -1,0 +1,24 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "jacob yager's online portfolio",
+  "main": "index.html",
+  "dependencies": {
+    "web-animations-js": "^2.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch scss/*.scss -o ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/y4ger/y4ger.github.io.git"
+  },
+  "author": "jacob yager",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/y4ger/y4ger.github.io/issues"
+  },
+  "homepage": "https://github.com/y4ger/y4ger.github.io#readme"
+}
