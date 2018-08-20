@@ -402,5 +402,7 @@ aside {
 }
 
 @media (max-width: 1100px) and (min-width: 450px) {
-  
+  .btn {
+    max-width: 103px;
+  }
 }
