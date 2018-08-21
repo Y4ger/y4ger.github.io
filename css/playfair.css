@@ -1,0 +1,8 @@
+table {
+  height: auto;
+  width: 50%; }
+
+.cell {
+  width: 25px;
+  height: 25px;
+  content: 'A'; }
