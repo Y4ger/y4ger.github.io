@@ -19,42 +19,48 @@
 		<caption>Playfair Key</caption>
 		<tbody>
 			<tr class="table-top">
-				<td class="cell cell-front 1"></td>
+				<td class="cell cell-front 0"></td>
+				<td class="cell 1"></td>
 				<td class="cell 2"></td>
 				<td class="cell 3"></td>
-				<td class="cell 4"></td>
-				<td class="cell cell-end 5"></td>
+				<td class="cell cell-end 4"></td>
 			</tr>
 			<tr>
-				<td class="cell cell-front 6"></td>
+				<td class="cell cell-front 5"></td>
+				<td class="cell 6"></td>
 				<td class="cell 7"></td>
 				<td class="cell 8"></td>
-				<td class="cell 9"></td>
-				<td class="cell cell-end 10"></td>
+				<td class="cell cell-end 9"></td>
 			</tr>
 			<tr>
-				<td class="cell cell-front 11"></td>
+				<td class="cell cell-front 10"></td>
+				<td class="cell 11"></td>
 				<td class="cell 12"></td>
 				<td class="cell 13"></td>
-				<td class="cell 14"></td>
-				<td class="cell cell-end 15"></td>
+				<td class="cell cell-end 14"></td>
 			</tr>
 			<tr>
-				<td class="cell cell-front 16"></td>
+				<td class="cell cell-front 15"></td>
+				<td class="cell 16"></td>
 				<td class="cell 17"></td>
 				<td class="cell 18"></td>
-				<td class="cell 19"></td>
-				<td class="cell cell-end 20"></td>
+				<td class="cell cell-end 19"></td>
 			</tr>
 			<tr class="table-end">
-				<td class="cell cell-front 21"></td>
+				<td class="cell cell-front 20"></td>
+				<td class="cell 21"></td>
 				<td class="cell 22"></td>
 				<td class="cell 23"></td>
-				<td class="cell 24"></td>
-				<td class="cell cell-end 25"></td>
+				<td class="cell cell-end 24"></td>
 			</tr>
 		</tbody>
 	</table>
+		<form action="" class="make-cipher" method="get" accept-charset="utf-8" onsubmit="encode(); event.preventDefault();">
+		<label for="message">Type your key: </label>
+		<input type="text" name="message" id="message">
+	</form>
+	<h3 class="encoded-message"></h3>
+
 </main>
 	<script src="../js/playfair.js" type="text/javascript" charset="utf-8" async defer></script>	
 </body>
