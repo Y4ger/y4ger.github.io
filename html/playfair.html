@@ -11,56 +11,101 @@
 </head>
 <body>
 <main>
-	<form action="" class="get-key" method="get" accept-charset="utf-8" onsubmit="setKey(); event.preventDefault();">
-		<label for="key">Type your key: </label>
-		<input type="text" name="key" id="key">
-	</form>
-	<table>
-		<caption>Playfair Key</caption>
-		<tbody>
-			<tr class="table-top">
-				<td class="cell cell-front 0"></td>
-				<td class="cell 1"></td>
-				<td class="cell 2"></td>
-				<td class="cell 3"></td>
-				<td class="cell cell-end 4"></td>
-			</tr>
-			<tr>
-				<td class="cell cell-front 5"></td>
-				<td class="cell 6"></td>
-				<td class="cell 7"></td>
-				<td class="cell 8"></td>
-				<td class="cell cell-end 9"></td>
-			</tr>
-			<tr>
-				<td class="cell cell-front 10"></td>
-				<td class="cell 11"></td>
-				<td class="cell 12"></td>
-				<td class="cell 13"></td>
-				<td class="cell cell-end 14"></td>
-			</tr>
-			<tr>
-				<td class="cell cell-front 15"></td>
-				<td class="cell 16"></td>
-				<td class="cell 17"></td>
-				<td class="cell 18"></td>
-				<td class="cell cell-end 19"></td>
-			</tr>
-			<tr class="table-end">
-				<td class="cell cell-front 20"></td>
-				<td class="cell 21"></td>
-				<td class="cell 22"></td>
-				<td class="cell 23"></td>
-				<td class="cell cell-end 24"></td>
-			</tr>
-		</tbody>
-	</table>
+	<h1>Playfair Cipher</h1>
+	<div class="content">
+		<h4>What is it?</h4>
+		<p>A playfair cipher is an encryption technique invented in 1854 by Charles Wheatstone. It is virtually impossible to break without the keyword.</p>
+		<p>This cipher is created in four steps:</p>
+		<ol>
+			<li>Choose a keyword</li>
+			<li>Adapt the keyword</li>
+			<li>Create a keytable</li>
+			<li>Encrypt your message</li>
+		</ol>
+	</div>
+	<div class="content">
+		<h4>Keyword</h4>
+		<p>The first step when creating a Playfair is to choose a keyword. This is the easy part. Any work or phrase will suffice.</p>
+		<form action="" class="get-key" method="get" accept-charset="utf-8" onsubmit="setKey(); event.preventDefault();">
+			<label for="key">Choose your keyword: </label>
+			<input type="text" name="key" id="key">
+		</form>
+	</div>
+	<div class="content">
+		<h4>Adapt</h4>
+		<p>There are some rules that need to be applied to your keyword before it is transformed into a keytable.</p>
+		<p>First, all J's must be replaced with I's. This must be done to shrink the alphabet from 26 letters to 25 letters. The number of letters will be made obvious during the key table creation.</p>
+		<p>Second, all spaces must be removed. This rule only applies if your keyword is a phrase.</p>
+		<p>Third, all letters can only occur once. That means if your keyword is "hello" it should be adapted to "helo"</p>
+	</div>
+	<div class="content">
+		<h4>Keytable</h4>
+		<p>Now that the keyword has been adapted you can create the keytable. A keytable is 5 by 5, meaning there are 25 available cells (that is why we had to shrink the alphabet).</p>
+		<p>Start the keytable by placing the first letter in your keyword in the top-left cell. Then place the second letter in the next cell of that row. Continue this until every letter in your keyword has been placed.</p>
+		<p>Then fill the remaining cells with the letters of the alphabet that haven't been placed yet, in alphabetical order. Don't forget to skip J!</p>
+		<table>
+			<caption>Playfair Key</caption>
+			<tbody>
+				<tr class="table-top">
+					<td class="cell cell-front 0"></td>
+					<td class="cell 1"></td>
+					<td class="cell 2"></td>
+					<td class="cell 3"></td>
+					<td class="cell cell-end 4"></td>
+				</tr>
+				<tr>
+					<td class="cell cell-front 5"></td>
+					<td class="cell 6"></td>
+					<td class="cell 7"></td>
+					<td class="cell 8"></td>
+					<td class="cell cell-end 9"></td>
+				</tr>
+				<tr>
+					<td class="cell cell-front 10"></td>
+					<td class="cell 11"></td>
+					<td class="cell 12"></td>
+					<td class="cell 13"></td>
+					<td class="cell cell-end 14"></td>
+				</tr>
+				<tr>
+					<td class="cell cell-front 15"></td>
+					<td class="cell 16"></td>
+					<td class="cell 17"></td>
+					<td class="cell 18"></td>
+					<td class="cell cell-end 19"></td>
+				</tr>
+				<tr class="table-end">
+					<td class="cell cell-front 20"></td>
+					<td class="cell 21"></td>
+					<td class="cell 22"></td>
+					<td class="cell 23"></td>
+					<td class="cell cell-end 24"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="content">
+		<h4>Encrypt</h4>
+		<p>Now that you have your keytable, its time to start encrypting. Choose the message you want to make secret.</p>	
 		<form action="" class="make-cipher" method="get" accept-charset="utf-8" onsubmit="encode(); event.preventDefault();">
-		<label for="message">Type your key: </label>
-		<input type="text" name="message" id="message">
-	</form>
-	<h3 class="encoded-message"></h3>
-
+			<label for="message">Type your key: </label>
+			<input type="text" name="message" id="message">
+		</form>
+		<p>The encryption process is easy once you understand the process.</p>
+		<p>First, apply the same rules that were used when adapting the keyword to the message.</p>
+		<p>Second, separate all of the letters into pairs of two starting with the first two letters. If any of the pairs end up being the same letter twice ("LL") replace the second letter with an "X" ("LX").</p>
+		<p>Now find the location of the first pair of letters on your keytable. There are three possible arrangements for any letter pairs.</p>
+		<ol>
+			<li>Same Row</li>
+			<li>Same Column</li>
+			<li>Different Row and Column</li>
+		</ol>
+		<p>If the two letters are in the same row they become the letter directly to their right (unless they are already on the far right then they become the first letter of that row)</p>
+		<p>If they are in the same column the letters become the letter directly below them (unless the letter is already at the bottom then it becomes the first letter in that column)</p>
+		<p>If the letters are not in the same row or column the encryption is a little more tricky. Each letter becomes the letter that is in its own row but shares a column with the other letter of the pair.</p>
+		<p>It is important that when you encrypt your message you keep the letter order how it was originally</p>
+		<h3 class="encoded-message"></h3>
+	</div>
 </main>
 	<script src="../js/playfair.js" type="text/javascript" charset="utf-8" async defer></script>	
 </body>
