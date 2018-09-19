@@ -253,6 +253,7 @@ aside {
   }
 }
 
+
 .inset {
   @extend %inset;
   background-color: $content;
@@ -263,7 +264,6 @@ aside {
   @extend %flex-parent-row;
   align-items: flex-start;
 }
-
 
 .graph {
   padding-right: 0;

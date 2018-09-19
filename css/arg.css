@@ -1,0 +1,111 @@
+@keyframes toggleText {
+  from {
+    color: #334422;
+  }
+  to {
+    color: #7fad5a;
+  }
+}
+@keyframes toggleNum {
+  from {
+    color: black;
+  }
+  to {
+    color: #334422;
+  }
+}
+@keyframes toggleBrd {
+  from {
+    border-color: black;
+  }
+  to {
+    border-color: #334422;
+  }
+}
+body {
+  background-color: black;
+  color: #334422;
+  font-size: 1.6em;
+  font-family: "Merienda", cursive;
+}
+
+.numbers {
+  max-width: 423px;
+  position: relative;
+  bottom: 200px;
+  left: 140px;
+  color: black;
+  animation-name: toggleNum;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-delay: 5s;
+  animation-fill-mode: forwards;
+}
+
+.message {
+  text-align: right;
+}
+
+.a {
+  animation-name: toggleText;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-delay: 1s;
+}
+
+.b {
+  margin-left: 100px;
+  animation-name: toggleText;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-delay: 3s;
+}
+
+.c {
+  margin-left: 500px;
+  animation-name: toggleText;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+.d {
+  margin-left: 790px;
+  animation-name: toggleText;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-delay: 2s;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+  font-size: 50px;
+  padding: 0 15px;
+  margin: 0 7px;
+  background-color: black;
+  border: 1px solid black;
+  color: black;
+  animation-name: toggleBrd;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-delay: 5s;
+  animation-fill-mode: forwards;
+}
+select:hover {
+  border-color: #7fad5a;
+  color: #7fad5a;
+}
+
+/*# sourceMappingURL=arg.css.map */

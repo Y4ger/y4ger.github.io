@@ -1,9 +1,13 @@
 table {
   height: auto;
   width: 50%;
-  text-align: center; }
+  text-align: center;
+}
 
 .cell {
   width: 25px;
   height: 25px;
-  content: 'A'; }
+  content: "A";
+}
+
+/*# sourceMappingURL=playfair.css.map */
