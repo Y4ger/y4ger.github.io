@@ -211,11 +211,13 @@ aside {
   background-color: $content;
 }
 
+
 .topic {
   @extend %flex-parent-row;
   align-items: baseline;
   align-content: center;
   height: 90%;
+  flex-wrap: wrap;
   padding-bottom: 0 !important;
 }
 
@@ -232,21 +234,19 @@ aside {
 .xtr-btm {
   padding-bottom: 30px;
 
-  p {
-    min-height: 200px;
-  }
-
   h4 {
     margin-bottom: 30px;
   }
 }
 
 .btn {
+  @extend %inset;
   display: flex;
   justify-content: center;
-  max-width: 50%;
+  padding: 15px;
   margin: 20px auto 0;
   font-size: .9em;
+  background-color: $bground;
 
   a {
     text-decoration: none;
