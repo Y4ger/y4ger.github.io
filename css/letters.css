@@ -123,6 +123,7 @@ body {
 
 .now {
   display: block;
+  animation: waitfade 1s forwards 1;
 }
 
 .not-yet {
@@ -343,7 +344,7 @@ body {
 }
 
 .letter--delivered {
-  animation: delivery .5s alternate 2;
+  animation: delivery .5s forwards 1;
 }
 
 .hide {
@@ -359,6 +360,7 @@ body {
   padding-top: 250px;
   font-size: 3em;
   font-family: 'Special Elite', cursive;
+  animation: wiggle2 1.5s alternate infinite;
 }
 
 .secret {

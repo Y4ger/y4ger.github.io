@@ -7,14 +7,7 @@ var deliverCount = 0;
 function envelopeOpen (){
 	var letters = document.querySelectorAll('.letter');
 	letters.forEach(function(written){
-		if  (written.classList.contains('letter--open')){
-			written.classList.remove('letter--open');
-			written.querySelector('.paper').classList.remove('paper--top');
-			written.classList.add('letter--close');
-			setTimeout(function(){
-				written.classList.remove('letter--close');
-			}, 600);    
-		} else if (written.classList.contains('now')){
+		if (written.classList.contains('now')){
 			written.classList.remove('letter--close');
 			written.classList.add('letter--open');
 			written.querySelector('.paper').classList.add('paper--top');
@@ -22,59 +15,45 @@ function envelopeOpen (){
 	});
 	document.querySelector('.now > .deliver').classList.add('hide');
 	openCount += 1;
-};
+}
 
 function paperClose(){
 	//determine if the letter was opened
 	var endGame = document.querySelector('.now').classList.item(0);
 	switch(endGame){
 		case "five":
-			document.body.classList.add('gameOver');
-			endText.appendChild(document.createTextNode("You have been beheaded for conspiracy against the King"));
-			setTimeout(function(){
-				document.querySelector('.five').classList.add('letter--delivered');
-			}, 600);
-			setTimeout(function(){
-				document.querySelector('.five').classList.add('not-yet');
-				endText.classList.remove('not-yet');
-			}, 800);
+			document.querySelector('.five').classList.add('letter--delivered');
+            document.querySelector('.five').classList.add('not-yet');
+            document.body.classList.add('gameOver');
+			document.querySelector('.endText').innerHTML = "You have been beheaded for conspiracy against the King";
 			break;
 		case "six":
-			document.body.classList.add('gameOver');
-			endText.appendChild(document.createTextNode("You have been beheaded for conspiracy against the King"));
-			setTimeout(function(){
-				document.querySelector('.six').classList.add('letter--delivered');
-			}, 600);
-			setTimeout(function(){
-				document.querySelector('.six').classList.add('not-yet');
-				endText.classList.remove('not-yet');
-			}, 800);
+			document.querySelector('.six').classList.add('letter--delivered');
+            document.querySelector('.six').classList.add('not-yet');
+            document.body.classList.add('gameOver');
+			document.querySelector('.endText').innerHTML = "You have been beheaded for conspiracy against the King";
 			break;
 		case "three":
 			trapDoor = 1;
 			break;
-	};
+	}
 	document.querySelector('.letter.now').classList.remove('letter--open');
 	document.querySelector('.letter.now > .paper').classList.remove('paper--top');
 	document.querySelector('.letter.now').classList.add('letter--close');
 	document.querySelector('.now > .deliver').classList.remove('hide');
 	setTimeout(function(){
-		document.querySelector('.letter.now').classList.remove('letter--close');
+      document.querySelector('.letter.now').classList.remove('letter--close');
+      deliverLetter();
 	}, 400);
-};
+}
 
 function deliverLetter (){
 	deliverCount += 1;
 	if (deliverCount - openCount > 3){
-		document.body.classList.add('gameOver');
-		endText.appendChild(document.createTextNode("You have to read more than that"));
-		setTimeout(function(){
-			document.querySelector('.now').classList.add('letter--delivered');
-		}, 600);
-		setTimeout(function(){
-			document.querySelector('.now').classList.add('not-yet');
-			endText.classList.remove('not-yet');
-		}, 800);
+		document.querySelector('.now').classList.add('letter--delivered');
+        document.querySelector('.now').classList.add('not-yet');
+        document.body.classList.add('gameOver');
+        document.querySelector('.endText').innerHTML = "You have to read more than that";
 	}
 	switch( currentLetter ){
 		case 1:
@@ -111,12 +90,11 @@ function deliverLetter (){
 					document.querySelector('div.four .letter').classList.add('now');
 				}, 1000);
 			} else {
-				endText.appendChild(document.createTextNode("You have fallen down a loose trap door"));
-				setTimeout(function(){
-					document.body.classList.add('gameOver');
-					document.querySelector('.three').classList.add('not-yet');
-					endText.classList.remove('not-yet');
-				}, 600);
+				document.querySelector('.three').classList.add('letter--delivered');
+                document.querySelector('.three').classList.add('not-yet');
+                document.body.classList.add('gameOver');
+                document.querySelector('.endText').innerHTML = "You fell down a loose trap door";
+			break;
 			}
 			break;
 		case 4:
@@ -166,4 +144,4 @@ function deliverLetter (){
 			break;
 	}
 	currentLetter = currentLetter + 1
-};
+}
