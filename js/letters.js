@@ -66,9 +66,8 @@ function deliverLetter (){
 	if (deliverCount - openCount > 3){
 		document.querySelector('.now').classList.add('letter--delivered');
 		setTimeout(function(){
-			document.querySelector('.now').classList.remove('now');
-			document.querySelector('div.one .letter').classList.remove('now');
-			document.querySelector('.one').classList.add('not-yet');          
+			document.querySelector('.now').classList.add('not-yet');          
+			document.querySelector('div.now .letter').classList.remove('now');					document.querySelector('.now').classList.remove('now');		
 		}, 300);
 		setTimeout(function(){
 			document.body.classList.add('gameOver');
@@ -113,9 +112,8 @@ function deliverLetter (){
 				trapDoor = 0;
 			} else {
               	setTimeout(function(){
-                	document.querySelector('.now').classList.remove('now');
-					document.querySelector('div.now .letter').classList.remove('now');
-					document.querySelector('.one').classList.add('not-yet');          
+                	document.querySelector('.now').classList.add('not-yet');          
+					document.querySelector('div.now .letter').classList.remove('now');					document.querySelector('.now').classList.remove('now');         
 				}, 300);
 				setTimeout(function(){
 					document.body.classList.add('gameOver');
@@ -147,9 +145,8 @@ function deliverLetter (){
 				}, 300);
 			} else {
 				setTimeout(function(){
-					document.querySelector('.now').classList.remove('now');
-					document.querySelector('div.one .letter').classList.remove('now');
-					document.querySelector('.one').classList.add('not-yet');          
+					document.querySelector('.now').classList.add('not-yet');          
+					document.querySelector('div.now .letter').classList.remove('now');					document.querySelector('.now').classList.remove('now');
 				}, 300);
 				setTimeout(function(){
 					document.body.classList.add('gameOver');
@@ -171,9 +168,8 @@ function deliverLetter (){
 				}, 300);
 			} else {
 				setTimeout(function(){
-					document.querySelector('.now').classList.remove('now');
-					document.querySelector('div.one .letter').classList.remove('now');
-					document.querySelector('.one').classList.add('not-yet');          
+					document.querySelector('.now').classList.add('not-yet');          
+					document.querySelector('div.now .letter').classList.remove('now');					document.querySelector('.now').classList.remove('now');				
 				}, 300);
 				setTimeout(function(){
 					document.body.classList.add('gameOver');
