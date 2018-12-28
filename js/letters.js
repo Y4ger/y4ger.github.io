@@ -20,40 +20,61 @@ function envelopeOpen (){
 function paperClose(){
 	//determine if the letter was opened
 	var endGame = document.querySelector('.now').classList.item(0);
-	switch(endGame){
-		case "five":
-			document.querySelector('.five').classList.add('letter--delivered');
-            document.querySelector('.five').classList.add('not-yet');
-            document.body.classList.add('gameOver');
-			document.querySelector('.endText').innerHTML = "You have been beheaded for conspiracy against the King";
-			break;
-		case "six":
-			document.querySelector('.six').classList.add('letter--delivered');
-            document.querySelector('.six').classList.add('not-yet');
-            document.body.classList.add('gameOver');
-			document.querySelector('.endText').innerHTML = "You have been beheaded for conspiracy against the King";
-			break;
-		case "three":
-			trapDoor = 1;
-			break;
-	}
 	document.querySelector('.letter.now').classList.remove('letter--open');
 	document.querySelector('.letter.now > .paper').classList.remove('paper--top');
 	document.querySelector('.letter.now').classList.add('letter--close');
 	document.querySelector('.now > .deliver').classList.remove('hide');
 	setTimeout(function(){
       document.querySelector('.letter.now').classList.remove('letter--close');
-      deliverLetter();
 	}, 400);
+	if (endGame == "five" || endGame == "six" || endGame == "three"){
+		trapDoor = 1;
+	}
+//	switch(endGame){
+//		case "five":
+//			document.querySelector('.now').classList.add('letter--delivered');
+//			setTimeout(function(){
+//				document.querySelector('.now').classList.remove('now');
+//				document.querySelector('div.one .letter').classList.remove('now');
+//				document.querySelector('.one').classList.add('not-yet');          
+//			}, 300);
+//			setTimeout(function(){
+//				document.body.classList.add('gameOver');
+//				document.querySelector('.endText').innerHTML = "You have been beheaded for conspiracy against the King";
+//			}, 600);
+//			break;
+//		case "six":
+//			document.querySelector('.now').classList.add('letter--delivered');
+//			setTimeout(function(){
+//				document.querySelector('.now').classList.remove('now');
+//				document.querySelector('div.one .letter').classList.remove('now');
+//				document.querySelector('.one').classList.add('not-yet');          
+//			}, 300);
+//			setTimeout(function(){
+//				document.body.classList.add('gameOver');
+//				document.querySelector('.endText').innerHTML = "You have been beheaded for conspiracy against the King";
+//			}, 600);
+//			break;
+//		case "three":
+//			trapDoor = 1;
+//			break;
+//	}
 }
 
 function deliverLetter (){
 	deliverCount += 1;
 	if (deliverCount - openCount > 3){
 		document.querySelector('.now').classList.add('letter--delivered');
-        document.querySelector('.now').classList.add('not-yet');
-        document.body.classList.add('gameOver');
-        document.querySelector('.endText').innerHTML = "You have to read more than that";
+		setTimeout(function(){
+			document.querySelector('.now').classList.remove('now');
+			document.querySelector('div.one .letter').classList.remove('now');
+			document.querySelector('.one').classList.add('not-yet');          
+		}, 300);
+		setTimeout(function(){
+			document.body.classList.add('gameOver');
+			document.querySelector('.endText').innerHTML = "You have to read more than that";
+		}, 600);
+		return;
 	}
 	switch( currentLetter ){
 		case 1:
@@ -65,7 +86,7 @@ function deliverLetter (){
 				document.querySelector('.two').classList.remove('not-yet');
 				document.querySelector('.two').classList.add('now');
 				document.querySelector('div.two .letter').classList.add('now');
-			}, 1000);
+			}, 300);
 			break;
 		case 2:
 			document.querySelector('.two').classList.add('letter--delivered');
@@ -76,7 +97,7 @@ function deliverLetter (){
 				document.querySelector('.three').classList.remove('not-yet');
 				document.querySelector('.three').classList.add('now');
 				document.querySelector('div.three .letter').classList.add('now');
-			}, 1000);
+			}, 300);
 			break;
 		case 3:
 			document.querySelector('.three').classList.add('letter--delivered');
@@ -88,13 +109,18 @@ function deliverLetter (){
 					document.querySelector('.four').classList.remove('not-yet');
 					document.querySelector('.four').classList.add('now');
 					document.querySelector('div.four .letter').classList.add('now');
-				}, 1000);
+				}, 300);
+				trapDoor = 0;
 			} else {
-				document.querySelector('.three').classList.add('letter--delivered');
-                document.querySelector('.three').classList.add('not-yet');
-                document.body.classList.add('gameOver');
-                document.querySelector('.endText').innerHTML = "You fell down a loose trap door";
-			break;
+              	setTimeout(function(){
+                	document.querySelector('.now').classList.remove('now');
+					document.querySelector('div.now .letter').classList.remove('now');
+					document.querySelector('.one').classList.add('not-yet');          
+				}, 300);
+				setTimeout(function(){
+					document.body.classList.add('gameOver');
+					document.querySelector('.endText').innerHTML = "You fell down a loose trap doors";
+				}, 600);
 			}
 			break;
 		case 4:
@@ -106,29 +132,55 @@ function deliverLetter (){
 				document.querySelector('.five').classList.remove('not-yet');
 				document.querySelector('.five').classList.add('now');
 				document.querySelector('div.five .letter').classList.add('now');
-			}, 1000);
+			}, 300);
 			break;
 		case 5:
 			document.querySelector('.five').classList.add('letter--delivered');
-			setTimeout(function(){
-				document.querySelector('.five').classList.remove('now');
-				document.querySelector('div.five .letter').classList.remove('now');
-				document.querySelector('.five').classList.add('not-yet');
-				document.querySelector('.six').classList.remove('not-yet');
-				document.querySelector('.six').classList.add('now');
-				document.querySelector('div.six .letter').classList.add('now');
-			}, 1000);
+			if (!trapDoor){
+				setTimeout(function(){
+					document.querySelector('.five').classList.remove('now');
+					document.querySelector('div.five .letter').classList.remove('now');
+					document.querySelector('.five').classList.add('not-yet');
+					document.querySelector('.six').classList.remove('not-yet');
+					document.querySelector('.six').classList.add('now');
+					document.querySelector('div.six .letter').classList.add('now');
+				}, 300);
+			} else {
+				setTimeout(function(){
+					document.querySelector('.now').classList.remove('now');
+					document.querySelector('div.one .letter').classList.remove('now');
+					document.querySelector('.one').classList.add('not-yet');          
+				}, 300);
+				setTimeout(function(){
+					document.body.classList.add('gameOver');
+					document.querySelector('.endText').innerHTML = "You have been beheaded for conspiracy against the King";
+				}, 600);
+			}
+			trapDoor = 0;
 			break;
 		case 6:
 			document.querySelector('.six').classList.add('letter--delivered');
-			setTimeout(function(){
-				document.querySelector('.six').classList.remove('now');
-				document.querySelector('div.six .letter').classList.remove('now');
-				document.querySelector('.six').classList.add('not-yet');
-				document.querySelector('.seven').classList.remove('not-yet');
-				document.querySelector('.seven').classList.add('now');
-				document.querySelector('div.seven .letter').classList.add('now');
-			}, 1000);
+			if (!trapDoor){
+				setTimeout(function(){
+					document.querySelector('.six').classList.remove('now');
+					document.querySelector('div.six .letter').classList.remove('now');
+					document.querySelector('.six').classList.add('not-yet');
+					document.querySelector('.seven').classList.remove('not-yet');
+					document.querySelector('.seven').classList.add('now');
+					document.querySelector('div.seven .letter').classList.add('now');
+				}, 300);
+			} else {
+				setTimeout(function(){
+					document.querySelector('.now').classList.remove('now');
+					document.querySelector('div.one .letter').classList.remove('now');
+					document.querySelector('.one').classList.add('not-yet');          
+				}, 300);
+				setTimeout(function(){
+					document.body.classList.add('gameOver');
+					document.querySelector('.endText').innerHTML = "You have been beheaded for conspiracy against the King";
+				}, 600);
+			}
+			trapDoor = 0;
 			break;
 		case 7:
 			document.querySelector('.seven').classList.add('letter--delivered');
@@ -140,7 +192,7 @@ function deliverLetter (){
 				document.querySelector('.eight').classList.add('now');
 				document.querySelector('div.eight .letter').classList.add('now');
 				document.querySelector('.now > .deliver').classList.add('hide');
-			}, 1000);
+			}, 300);
 			break;
 	}
 	currentLetter = currentLetter + 1

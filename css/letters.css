@@ -354,13 +354,12 @@ body {
 .gameOver {
   background-color: red;
   height: 100%;
-  animation: redfade 3s forwards ease-in;
+  animation: redfade 1s forwards ease-in, wiggle2 1.5s alternate infinite;
   margin: 0;
   text-align: center;
   padding-top: 250px;
   font-size: 3em;
   font-family: 'Special Elite', cursive;
-  animation: wiggle2 1.5s alternate infinite;
 }
 
 .secret {
